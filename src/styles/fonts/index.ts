@@ -1,3 +1,4 @@
+import { Arvo, Noto_Sans } from 'next/font/google';
 import nextLocalFont from 'next/font/local';
 
 const gilroy = nextLocalFont({
@@ -18,4 +19,20 @@ const gilroy = nextLocalFont({
   fallback: ['system-ui'],
 });
 
-export { gilroy };
+const noto_sans = Noto_Sans({
+  subsets: ['latin'],
+  weight: ['300', '400', '700'],
+  display: 'swap',
+  fallback: ['system-ui'],
+  adjustFontFallback: true,
+  preload: true,
+});
+
+const arvo = Arvo({
+  subsets: ['latin'],
+  weight: ['400'],
+  display: 'swap',
+  fallback: ['system-ui'],
+});
+
+export { arvo, gilroy, noto_sans };
