@@ -4,7 +4,7 @@ import mountain from './image.jpg';
 const LocalMain = () => {
   return (
     <main>
-      <Image src={mountain} width={1000} placeholder="blur" quality={100} priority />
+      <Image src={mountain} alt="" width={1000} placeholder="blur" quality={100} priority />
     </main>
   );
 };
