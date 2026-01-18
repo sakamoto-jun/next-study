@@ -10,15 +10,15 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
   const res = await fetchPostList();
   const sliced_post_list = res.slice(0, 3);
 
-  const paths: GetStaticPathsResult<Params>['paths'] = sliced_post_list.map((post) => ({
-    params: {
-      id: String(post.id),
-    },
-  }));
+  const paths: GetStaticPathsResult<Params>['paths'] = sliced_post_list.map((post) => {
+    return {
+      params: { id: String(post.id) },
+    };
+  });
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 };
 

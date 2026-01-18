@@ -16,11 +16,11 @@ export async function fetchPost(id: string): Promise<Post> {
   const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
   const data: Post = await res.json();
 
-  return data;
+  // return data;
 
-  // return new Promise<Post>((resolve, _reject) => {
-  //   setTimeout(() => {
-  //     resolve(data);
-  //   }, 5000);
-  // });
+  return new Promise<Post>((resolve, _reject) => {
+    setTimeout(() => {
+      resolve(data);
+    }, 5000);
+  });
 }
