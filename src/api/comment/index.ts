@@ -11,7 +11,7 @@ interface Comment {
 
 async function fetchComments(post_id: string): Promise<Comment[]> {
   const result = await fetch(
-    `https://jsonplaceholder.typicode.com/posts/${post_id}/comments1`,
+    `https://jsonplaceholder.typicode.com/posts/${post_id}/comments`,
   );
 
   if (!result.ok) {
@@ -31,7 +31,7 @@ interface ExtendsNextApiRequest extends NextApiRequest {
   };
 }
 
-interface CommentResponse {
+export interface CommentResponse {
   comments: Comment[];
 }
 
